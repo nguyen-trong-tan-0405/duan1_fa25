@@ -1,13 +1,14 @@
-<?php 
+<?php
 // ======= Require Common =======
-require_once './commons/env.php'; 
-require_once './commons/function.php'; 
-require_once './commons/connect-db.php'; 
+require_once './commons/env.php';
+require_once './commons/function.php';
+require_once './commons/connect-db.php';
 
 
 // ======= Require Controllers =======
 require_once './controllers/ProductController.php';
-require_once './controllers/TourController.php'; // ✅ thêm controller tour
+require_once './controllers/TourController.php'; //  thêm controller tour
+require_once './controllers/CategoryController.php'; // thêm controller category
 
 // ======= Require Models =======
 require_once './models/ProductModel.php';
@@ -28,4 +29,6 @@ match ($act) {
     'admin-tour-edit'      => (new TourController())->editForm(),   // hiển thị form sửa
     'admin-tour-update'    => (new TourController())->update(),     // cập nhật tour
     'admin-tour-delete'    => (new TourController())->delete(),     // xóa tour
+    'admin-category-tour'  => (new CategoryController())->index(),      // xem danh sách tour
+
 };
